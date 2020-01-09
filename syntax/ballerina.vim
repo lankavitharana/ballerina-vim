@@ -26,7 +26,7 @@ syntax match balOperator "\v\+\="
 syntax match balOperator "\v-\="
 syntax match balOperator "\v\="
 syntax region balString start=/\v"/ skip=/\v\\./ end=/\v"/
-syntax region balComment start=/\v\/\// skip=/\v\\./ end=/\v\_$/
+syntax region balComment start=/\v(\/\/|#)/ skip=/\v\\./ end=/\v\_$/
 
 highlight link balModifiers Keyword
 highlight link balOperator Operator
