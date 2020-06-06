@@ -9,9 +9,11 @@ syntax keyword balTypes function xmlns
 syntax match balTypes "\v(xml|(\w*)):(Element|ProcessingInstruction|Comment)"
 syntax keyword balConditions if else while foreach for
 syntax keyword balIs is in 
-syntax keyword balImport import returns return
+syntax keyword balImport import returns
+syntax keyword balStatement return
 syntax keyword balObject object record
 syntax keyword balFunc resource worker
+syntax keyword balBoolean true false
 syntax match balFunctionCall "\zs\(\k\w*:\)*\(\k\w*\)*\s*\ze("
 syntax match balOperator "\v\*"
 syntax match balOperator "\v\|"
@@ -30,18 +32,23 @@ syntax match balOperator "\v-\="
 syntax match balOperator "\v\="
 syntax region balString start=/\v"/ skip=/\v\\./ end=/\v"/
 syntax region balComment start=/\v(\/\/|#)/ skip=/\v\\./ end=/\v\_$/
+syntax match balNumber "\v<\d+>"
+syntax match balNumber "\v<\d+(.\d+)>"
 
-highlight link balModifiers Keyword
-highlight link balOperator Operator
-highlight link balIs Operator
-highlight link balTypes Type
-highlight link balImport Identifier
-highlight link balObject Keyword
-highlight link balFunc Function
-highlight link balFunctionCall Function
-highlight link balComment Comment
-highlight link balString String
-highlight link balConditions Statement
+highlight def link balModifiers Keyword
+highlight def link balOperator Operator
+highlight def link balIs Operator
+highlight def link balTypes Type
+highlight def link balImport Identifier
+highlight def link balObject Keyword
+highlight def link balFunc Function
+highlight def link balFunctionCall Function
+highlight def link balComment Comment
+highlight def link balString String
+highlight def link balConditions Statement
+highlight def link balNumber Number
+highlight def link balStatement Statement
+highlight def link balBoolean Boolean
 
 " learn more about plugin dev - link - http://learnvimscriptthehardway.stevelosh.com/
 " learn about groups :help group-name
