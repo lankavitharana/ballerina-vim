@@ -6,7 +6,7 @@ endif
 syntax keyword balModifiers public private external final remote const
 syntax keyword balTypes int byte float decimal boolean string error map json xml table stream any typedesc type future anydata handle var never readonly
 syntax keyword balTypes function xmlns 
-syntax match balTypes "\v(xml|(\w*)):(Element|ProcessingInstruction|Comment)"
+syntax keyword balTypedef type
 syntax keyword balConditions if else while foreach for
 syntax keyword balIs is in 
 syntax keyword balImport import returns
@@ -14,6 +14,7 @@ syntax keyword balStatement return
 syntax keyword balObject object record
 syntax keyword balFunc resource worker
 syntax keyword balBoolean true false
+syntax match balTypes "\v(xml|(\w*)):(Element|ProcessingInstruction|Comment)"
 syntax match balFunctionCall "\zs\(\k\w*:\)*\(\k\w*\)*\s*\ze("
 syntax match balOperator "\v\*"
 syntax match balOperator "\v\|"
@@ -49,6 +50,7 @@ highlight def link balConditions Statement
 highlight def link balNumber Number
 highlight def link balStatement Statement
 highlight def link balBoolean Boolean
+highlight def link balTypedef Typedef
 
 " learn more about plugin dev - link - http://learnvimscriptthehardway.stevelosh.com/
 " learn about groups :help group-name
