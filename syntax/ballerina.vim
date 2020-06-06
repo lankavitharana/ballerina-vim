@@ -15,6 +15,7 @@ syntax keyword balStatement return
 syntax keyword balObject object record
 syntax keyword balFunc resource worker
 syntax keyword balBoolean true false
+syntax keyword balException panic trap
 syntax match balTypes "\v(xml|(\w*)):(Element|ProcessingInstruction|Comment)"
 syntax match balFunctionCall "\zs\(\k\w*:\)*\(\k\w*\)*\s*\ze("
 syntax match balOperator "\v\*"
@@ -53,6 +54,9 @@ highlight def link balBoolean       Boolean
 highlight def link balTypedef       Typedef
 highlight def link balStructure     Structure
 highlight def link balObject        Structure
+highlight def link balImport        Include
+highlight def link balException     Exception
+
 
 " learn more about plugin dev - link - http://learnvimscriptthehardway.stevelosh.com/
 " learn about groups :help group-name
