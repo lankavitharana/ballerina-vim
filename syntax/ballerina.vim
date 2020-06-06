@@ -4,12 +4,14 @@ endif
 
 
 syntax keyword balModifiers public private external final remote const const
-syntax keyword balTypes int byte float decimal boolean string error map json xml table stream any typedesc type future anydata handle var
+syntax keyword balTypes int byte float decimal boolean string error map json xml table stream any typedesc type future anydata handle var never readonly
+syntax keyword balTypes function 
 syntax keyword balConditions if else while foreach for
 syntax keyword balIs is in 
 syntax keyword balImport import returns return
 syntax keyword balObject object record
-syntax keyword balFunc function resource worker
+syntax keyword balFunc resource worker init main
+syntax keyword balIOFunc "\vio:\*"
 syntax match balOperator "\v\*"
 syntax match balOperator "\v\|"
 syntax match balOperator "\v/"
@@ -35,6 +37,7 @@ highlight link balTypes Type
 highlight link balImport Identifier
 highlight link balObject Keyword
 highlight link balFunc Function
+highlight link balIOFunc Function
 highlight link balComment Comment
 highlight link balString String
 highlight link balConditions Statement
