@@ -5,7 +5,8 @@ endif
 
 syntax keyword balModifiers public private external final remote const
 syntax keyword balTypes int byte float decimal boolean string error map json xml table stream any typedesc type future anydata handle var never readonly
-syntax keyword balTypes function xml:Element xml:ProcessingInstruction xml:Comment
+syntax keyword balTypes function xmlns 
+syntax match balTypes "\v(xml|(\w*)):(Element|ProcessingInstruction|Comment)"
 syntax keyword balConditions if else while foreach for
 syntax keyword balIs is in 
 syntax keyword balImport import returns return
