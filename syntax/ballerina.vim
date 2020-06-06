@@ -5,14 +5,15 @@ endif
 
 syntax keyword balModifiers public private external final remote const
 syntax keyword balTypes int byte float decimal boolean string error json xml any typedesc type future anydata handle var never readonly error
-syntax keyword balTypes function xmlns 
-syntax keyword balStructure map table stream 
+syntax keyword balTypes function xmlns listener service
+syntax keyword balStructure map table stream enum
 syntax keyword balTypedef type
 syntax keyword balConditions if else match
+syntax keyword balBranch continue break fork wait
 syntax keyword balRepeat while foreach
 syntax keyword balIs is in 
 syntax keyword balImport import returns
-syntax keyword balStatement return
+syntax keyword balStatement return start lock
 syntax keyword balObject object record
 syntax keyword balFunc resource worker
 syntax keyword balBoolean true false
@@ -23,7 +24,7 @@ syntax match balOperator "\v\*"
 syntax match balOperator "\v\|"
 syntax match balOperator "\v/"
 syntax match balOperator "\v\+"
-syntax match balOperator "\v-"
+syntax match balOperator "\v[^\<]-[^\>]"
 syntax match balOperator "\v\?"
 syntax match balOperator "\v\|"
 syntax match balOperator "\v\%"
@@ -35,6 +36,8 @@ syntax match balOperator "\v\+\="
 syntax match balOperator "\v-\="
 syntax match balOperator "\v\=[^\>]"
 syntax match balLabel    "\v\=\>"
+syntax match balLabel    "\v\<-"
+syntax match balLabel    "\v-\>"
 syntax region balString start=/\v"/ skip=/\v\\./ end=/\v"/
 syntax region balComment start=/\v(\/\/|#)/ skip=/\v\\./ end=/\v\_$/
 syntax match balNumber "\v<\d+>"
@@ -50,6 +53,7 @@ highlight def link balFunctionCall  Function
 highlight def link balComment       Comment
 highlight def link balString        String
 highlight def link balConditions    Conditional
+highlight def link balBranch        Conditional
 highlight def link balStatement     Statement
 highlight def link balNumber        Number
 highlight def link balFloat         Float
