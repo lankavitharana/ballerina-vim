@@ -36,8 +36,8 @@ syntax match balOperator "\v\+\="
 syntax match balOperator "\v-\="
 syntax match balOperator "\v\=[^\>]"
 syntax match balLabel    "\v\=\>"
-syntax match balLabel    "\v\<-"
-syntax match balLabel    "\v-\>"
+syntax match balLabel    "\v\<{1,2}-"
+syntax match balLabel    "\v-\>{1,2}"
 syntax region balString start=/\v"/ skip=/\v\\./ end=/\v"/
 syntax region balComment start=/\v(\/\/|#)/ skip=/\v\\./ end=/\v\_$/
 syntax match balNumber "\v<\d+>"
