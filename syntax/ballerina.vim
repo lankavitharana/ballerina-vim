@@ -4,8 +4,9 @@ endif
 
 
 syntax keyword balModifiers public private external final remote const
-syntax keyword balTypes int byte float decimal boolean string error map json xml table stream any typedesc type future anydata handle var never readonly
+syntax keyword balTypes int byte float decimal boolean string error map json xml table stream any typedesc type future anydata handle var never readonly error
 syntax keyword balTypes function xmlns 
+syntax keyword balStructure map table stream 
 syntax keyword balTypedef type
 syntax keyword balConditions if else while foreach for
 syntax keyword balIs is in 
@@ -51,6 +52,7 @@ highlight def link balNumber Number
 highlight def link balStatement Statement
 highlight def link balBoolean Boolean
 highlight def link balTypedef Typedef
+highlight def link balStructure Structure
 
 " learn more about plugin dev - link - http://learnvimscriptthehardway.stevelosh.com/
 " learn about groups :help group-name
