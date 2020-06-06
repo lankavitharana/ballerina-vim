@@ -8,7 +8,8 @@ syntax keyword balTypes int byte float decimal boolean string error json xml any
 syntax keyword balTypes function xmlns 
 syntax keyword balStructure map table stream 
 syntax keyword balTypedef type
-syntax keyword balConditions if else while foreach for
+syntax keyword balConditions if else match
+syntax keyword balRepeat while foreach
 syntax keyword balIs is in 
 syntax keyword balImport import returns
 syntax keyword balStatement return
@@ -32,11 +33,12 @@ syntax match balOperator "\v\!\=\="
 syntax match balOperator "\v\!\="
 syntax match balOperator "\v\+\="
 syntax match balOperator "\v-\="
-syntax match balOperator "\v\="
+syntax match balOperator "\v\=[^\>]"
+syntax match balLabel    "\v\=\>"
 syntax region balString start=/\v"/ skip=/\v\\./ end=/\v"/
 syntax region balComment start=/\v(\/\/|#)/ skip=/\v\\./ end=/\v\_$/
 syntax match balNumber "\v<\d+>"
-syntax match balNumber "\v<\d+(.\d+)>"
+syntax match balFloat "\v<\d+.\d+>"
 
 highlight def link balModifiers     Keyword
 highlight def link balOperator      Operator
@@ -47,15 +49,19 @@ highlight def link balFunc          Function
 highlight def link balFunctionCall  Function
 highlight def link balComment       Comment
 highlight def link balString        String
-highlight def link balConditions    Statement
+highlight def link balConditions    Conditional
 highlight def link balStatement     Statement
 highlight def link balNumber        Number
+highlight def link balFloat         Float
 highlight def link balBoolean       Boolean
 highlight def link balTypedef       Typedef
 highlight def link balStructure     Structure
 highlight def link balObject        Structure
 highlight def link balImport        Include
 highlight def link balException     Exception
+highlight def link balRepeat        Repeat
+highlight def link balLabel         Label
+" highlight def link Todo        Todo
 
 
 " learn more about plugin dev - link - http://learnvimscriptthehardway.stevelosh.com/
