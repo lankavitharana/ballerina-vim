@@ -18,6 +18,7 @@ syntax keyword balObject     object record
 syntax keyword balFunc       resource worker
 syntax keyword balBoolean    true false
 syntax keyword balException  panic trap
+syntax keyword balTodo       TODO FIXME fixme todo contained
 
 syntax match balTypes    "\v(\w*):(Element|ProcessingInstruction|Comment|Text)"
 syntax match balOperator "\v\*"
@@ -42,7 +43,7 @@ syntax match balNumber   "\v<\d+>"
 syntax match balFloat    "\v<\d+.\d+>"
 
 syntax region balString  start=/\v"/ skip=/\v\\./ end=/\v"/
-syntax region balComment start=/\v(\/\/|#)/ skip=/\v\\./ end=/\v\_$/
+syntax region balComment start=/\v(\/\/|#)/ skip=/\v\\./ end=/\v\_$/ contains=balTodo
 
 highlight def link balModifiers     Keyword
 highlight def link balOperator      Operator
@@ -65,7 +66,7 @@ highlight def link balImport        Include
 highlight def link balException     Exception
 highlight def link balRepeat        Repeat
 highlight def link balLabel         Label
-highlight def link balTodo        Todo
+highlight def link balTodo          Todo
 
 
 " learn more about plugin dev - link - http://learnvimscriptthehardway.stevelosh.com/
