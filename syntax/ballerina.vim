@@ -4,9 +4,9 @@ endif
 
 
 syntax keyword balModifiers  public private external final remote const abstract
+syntax keyword balModifiers  distinct
 syntax keyword balTypes      int byte float decimal boolean string error json any typedesc future anydata handle var never readonly error xml
 syntax keyword balTypes      function xmlns listener service
-syntax keyword balTypes      distinct 
 syntax keyword balStructure  map table stream enum
 syntax keyword balTypedef    type
 syntax keyword balConditions if else match
